@@ -8,8 +8,11 @@ import time
 
 countdown = int(input("Enter the number of seconds to count down: "))
 
+words = {5: "five", 4: "four", 3: "three", 2: "two", 1: "one"}
+
 while countdown > 0:
-    print(countdown)
+    print(words.get(countdown, countdown), flush=True)  
+    # get() zwraca słowo ze słownika dla danej liczby, a gdy jej brak, zwraca countdown. flush=True wymusza natychmiastowe wypisanie wyniku.
     countdown -= 1
     time.sleep(1)  # Wait for 1 second
 
